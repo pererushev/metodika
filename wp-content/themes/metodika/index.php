@@ -1,21 +1,11 @@
 <?php
 /**
- * Fallback-шаблон. Разметка шапки и hero появится в рабочей ветке.
+ * Главная. Hero появится следующим шагом.
  *
  * @package Metodika
  */
 
 defined( 'ABSPATH' ) || exit;
 
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<?php wp_footer(); ?>
-</body>
-</html>
+get_header();
+get_footer();
