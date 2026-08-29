@@ -1,0 +1,21 @@
+# Игнорировать всё в корне WordPress, кроме явно разрешённого.
+/*
+!.gitignore
+!/wp-content/
+
+# В wp-content держим только свою тему.
+/wp-content/*
+!/wp-content/themes/
+
+/wp-content/themes/*
+!/wp-content/themes/metodika/
+
+# Зависимости и служебные файлы (в том числе внутри темы).
+node_modules/
+vendor/
+.DS_Store
+Thumbs.db
+*.log
+*.fig
+.env
+.env.*
