@@ -18,6 +18,7 @@ function metodika_setup() {
 	load_theme_textdomain( 'metodika', get_template_directory() . '/languages' );
 
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array( 'navigation-lists', 'style', 'script' ) );
 
 	add_theme_support(
@@ -40,7 +41,7 @@ function metodika_setup() {
 }
 
 /**
- * Стили шапки и скрипт бургера. Hero подключится отдельным файлом позже.
+ * Стили темы и скрипт бургера.
  */
 function metodika_enqueue_assets() {
 	$theme_uri = get_template_directory_uri();

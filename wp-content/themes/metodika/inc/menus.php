@@ -268,12 +268,16 @@ function metodika_seed_header_menus() {
 					'url'   => home_url( '/#uslugi' ),
 				),
 				array(
-					'title' => 'База знаний',
-					'url'   => home_url( '/#baza' ),
+					'title' => 'Работодателям',
+					'url'   => home_url( '/#rabotodatelyam' ),
 				),
 				array(
 					'title' => 'О нас',
 					'url'   => home_url( '/#o-nas' ),
+				),
+				array(
+					'title' => 'База знаний',
+					'url'   => home_url( '/#baza' ),
 				),
 				array(
 					'title' => 'Отзывы',
@@ -282,10 +286,6 @@ function metodika_seed_header_menus() {
 				array(
 					'title' => 'Контакты',
 					'url'   => home_url( '/#kontakty' ),
-				),
-				array(
-					'title' => 'Работодателям',
-					'url'   => home_url( '/#rabotodatelyam' ),
 				),
 				array(
 					'title'   => 'Бесплатная консультация',
@@ -306,8 +306,8 @@ function metodika_seed_header_menus() {
 			'Контакты в шапке',
 			array(
 				array(
-					'title' => '+7 (495) 895-00-51',
-					'url'   => 'tel:+74958950051',
+					'title' => '+7 (495) 859-00-51',
+					'url'   => 'tel:+74958590051',
 				),
 			)
 		);
