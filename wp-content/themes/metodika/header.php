@@ -7,6 +7,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$header = metodika_get_header();
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -38,31 +40,46 @@ defined( 'ABSPATH' ) || exit;
 		</button>
 
 		<div class="header-panel" id="header-panel">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'header_contacts',
-					'container'      => false,
-					'menu_class'     => 'header-contacts',
-					'fallback_cb'    => false,
-					'depth'          => 1,
-				)
-			);
-			?>
+			<div class="header-toolbar">
+				<?php metodika_the_header_socials(); ?>
 
-			<nav class="header-nav" aria-label="<?php esc_attr_e( 'Основное меню', 'metodika' ); ?>">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'primary',
-						'container'      => false,
-						'menu_class'     => 'header-menu',
-						'fallback_cb'    => false,
-						'depth'          => 1,
-					)
-				);
-				?>
-			</nav>
+				<div class="header-phone">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'header_contacts',
+							'container'      => false,
+							'menu_class'     => 'header-contacts',
+							'fallback_cb'    => false,
+							'depth'          => 1,
+						)
+					);
+					?>
+					<?php if ( $header['hours'] ) : ?>
+						<p class="header-phone__hours"><?php echo esc_html( $header['hours'] ); ?></p>
+					<?php endif; ?>
+				</div>
+
+				<?php metodika_the_header_cta(); ?>
+			</div>
+
+			<div class="header-bar">
+				<nav class="header-nav" aria-label="<?php esc_attr_e( 'Основное меню', 'metodika' ); ?>">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'primary',
+							'container'      => false,
+							'menu_class'     => 'header-menu',
+							'fallback_cb'    => false,
+							'depth'          => 2,
+						)
+					);
+					?>
+				</nav>
+
+				<?php metodika_the_header_rating(); ?>
+			</div>
 		</div>
 	</div>
 </header>
