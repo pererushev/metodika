@@ -1,6 +1,7 @@
 # Игнорировать всё в корне WordPress, кроме явно разрешённого.
 /*
 !.gitignore
+!README.md
 !/wp-content/
 
 # В wp-content держим только свою тему.
