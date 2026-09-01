@@ -154,7 +154,7 @@ function metodika_the_header_socials() {
 			'url'   => $header['whatsapp'],
 			'label' => __( 'WhatsApp', 'metodika' ),
 			'mod'   => 'whatsapp',
-			'icon'  => '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.55 2 2.1 6.45 2.1 11.94c0 1.76.46 3.48 1.34 5L2 22l5.2-1.37a9.9 9.9 0 0 0 4.84 1.23h.01c5.49 0 9.94-4.45 9.94-9.93a9.85 9.85 0 0 0-2.94-7.02Zm-7.01 15.27h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.08.81.82-3.01-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.26 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.3.19-.55.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.3.37-.44.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.71 4.3 3.8.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>',
+			'icon'  => 'whatsapp.svg',
 		);
 	}
 
@@ -163,7 +163,7 @@ function metodika_the_header_socials() {
 			'url'   => $header['telegram'],
 			'label' => __( 'Telegram', 'metodika' ),
 			'mod'   => 'telegram',
-			'icon'  => '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21.5 3.4 2.9 10.6c-1.27.5-1.26 1.2-.23 1.52l4.78 1.49 11.05-6.97c.52-.32 1-.15.61.2l-8.95 8.08-.35 5.02c.5 0 .73-.23 1.01-.5l2.42-2.35 5.03 3.72c.93.51 1.59.25 1.82-.86l3.3-15.55c.34-1.36-.52-1.98-1.39-1.57Z"/></svg>',
+			'icon'  => 'tg.svg',
 		);
 	}
 
@@ -181,7 +181,13 @@ function metodika_the_header_socials() {
 					rel="noopener noreferrer"
 					aria-label="<?php echo esc_attr( $link['label'] ); ?>"
 				>
-					<?php echo $link['icon']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- inline SVG. ?>
+					<img
+						src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $link['icon'] ); ?>"
+						alt=""
+						width="34"
+						height="34"
+						aria-hidden="true"
+					>
 				</a>
 			</li>
 		<?php endforeach; ?>

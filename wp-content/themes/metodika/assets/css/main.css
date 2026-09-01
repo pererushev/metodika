@@ -205,15 +205,11 @@ a {
 	width: 36px;
 	height: 36px;
 	border-radius: 50%;
-	color: var(--color-white);
 }
 
-.header-social--whatsapp {
-	background: var(--color-wa);
-}
-
-.header-social--telegram {
-	background: var(--color-tg);
+.header-social img {
+	width: 34px;
+	height: 34px;
 }
 
 .header-social:hover {
@@ -223,7 +219,7 @@ a {
 .header-phone {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: flex-end;
 	gap: 2px;
 }
 
@@ -236,16 +232,19 @@ a {
 }
 
 .header-contacts__link {
+	font-family: Inter, var(--font-sans);
 	font-size: 18px;
-	font-weight: 700;
-	line-height: 1.2;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 26px;
 	white-space: nowrap;
-	letter-spacing: -0.02em;
-	color: var(--color-brand);
+	letter-spacing: 0.02em;
+	text-align: right;
+	color: #1a1b1d;
 }
 
 .header-contacts__link:hover {
-	color: var(--color-brand);
+	color: #1a1b1d;
 }
 
 .header-phone__hours {
@@ -536,13 +535,13 @@ body.is-menu-open {
 }
 
 .btn--ghost {
-	background: var(--color-white);
+	background: transparent;
 	border-color: var(--color-brand);
 	color: var(--color-brand);
 }
 
 .btn--ghost:hover {
-	background: var(--color-card);
+	background: var(--color-white);
 }
 
 .icon-arrow {
@@ -745,7 +744,8 @@ body.is-menu-open {
 	justify-content: flex-start;
 	gap: 18px;
 	box-sizing: border-box;
-	width: var(--hero-badge-w);
+	width: max-content;
+	min-width: var(--hero-badge-w);
 	height: var(--hero-badge-h);
 	max-width: 100%;
 	margin: 0;
@@ -767,6 +767,7 @@ body.is-menu-open {
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
 	text-align: left;
+	white-space: nowrap;
 	color: var(--color-text);
 }
 

@@ -93,7 +93,12 @@ $arrow = metodika_icon_arrow();
 
 	<?php if ( $hero['offices'] ) : ?>
 		<?php
-		$office_groups = preg_split( '/\R\s*\R/u', (string) $hero['offices'] );
+		$offices = preg_replace(
+			'/работаем по москве\s+и московской области/iu',
+			"Работаем по Москве\nи Московской области",
+			(string) $hero['offices']
+		);
+		$office_groups = preg_split( '/\R\s*\R/u', $offices );
 		$office_groups = array_values( array_filter( array_map( 'trim', $office_groups ) ) );
 		?>
 		<div class="hero__badge">
