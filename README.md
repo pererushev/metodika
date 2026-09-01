@@ -6,27 +6,38 @@
 
 ## Требования
 
-- WordPress 6.7+
+- WordPress 6.7+ (уже установлен в целевом каталоге)
 - PHP 8.1+
-- [Composer](https://getcomposer.org/) (Carbon Fields ставится в тему, не отдельным плагином)
+- Git
+- [Composer](https://getcomposer.org/) — Carbon Fields ставится в тему, не отдельным плагином
 
 Сборки фронтенда нет: CSS и JS подключаются как есть.
 
 ## Деплой
 
-Тема ставится на уже работающий WordPress.
+Корень сайта — непустой каталог WordPress, в него нельзя сделать `git clone`. Репозиторий инициализируют на месте и подтягивают remote.
 
-1. Скопируйте каталог `wp-content/themes/metodika` в `wp-content/themes/` на сервере (или клонируйте репозиторий в корень сайта).
-2. Поставьте зависимости — `vendor/` в git нет:
+В корне WordPress:
+
+```bash
+git init
+git remote add origin https://github.com/pererushev/metodika.git
+git fetch origin
+git checkout feature/header-hero
+```
+
+`.gitignore` из репозитория скрывает ядро WP, конфиг и загрузки: в индекс попадёт только тема.
+
+Зависимости в git нет — после выкладки темы:
 
 ```bash
 cd wp-content/themes/metodika
 composer install --no-dev
 ```
 
-3. В админке: **Внешний вид → Темы → Metodika → Активировать**.
+В админке: **Внешний вид → Темы → Metodika → Активировать**.
 
-После обновления кода на сервере достаточно снова выполнить `composer install --no-dev` в папке темы (если менялся `composer.lock`) и сбросить кеш, если он включён.
+Обновление: `git pull` в корне сайта. Если менялся `composer.lock` — снова `composer install --no-dev` в папке темы.
 
 ## Настройка
 
